@@ -1,5 +1,5 @@
 package br.calebe.ticketmachine.core;
-
+//
 /**
  * Classe que representa uma cédula de dinheiro.
  */
