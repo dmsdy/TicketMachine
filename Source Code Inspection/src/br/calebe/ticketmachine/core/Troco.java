@@ -1,7 +1,7 @@
 package br.calebe.ticketmachine.core;
 
 import java.util.Iterator;
-
+//
 /**
  * Classe que representa o troco da máquina de tickets.
  * Calcula a quantidade de cédulas necessárias para devolver o troco.
