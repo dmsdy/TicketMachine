@@ -72,13 +72,18 @@ public class TicketMachine {
     }
 
     /**
-     * Método que deve retornar o troco.
-     * Atualmente, está sem implementação.
+     * Retorna o troco restante após a compra do ticket.
+     * Usa a classe Troco para calcular e devolver o troco correto.
      * 
-     * @return null (ainda não implementado).
+     * @return Iterador das cédulas do troco.
      */
-    public Iterator<Integer> getTroco() {
-        return null; // Retorno padrão, a função não está implementada
+    public Iterator<PapelMoeda> getTroco() {
+        int trocoValor = saldo - valorTicket; // Calcula o valor do troco
+        if (trocoValor > 0) {
+            Troco troco = new Troco(trocoValor); // Cria um objeto Troco com o valor do troco
+            return troco.getIterator(); // Retorna o iterador das cédulas do troco
+        }
+        return null; // Se não houver troco, retorna null
     }
 
     /**
