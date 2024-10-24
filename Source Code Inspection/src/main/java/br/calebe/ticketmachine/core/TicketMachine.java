@@ -78,7 +78,7 @@ public class TicketMachine {
      * @return Iterador das cédulas do troco.
      */
     public Iterator<PapelMoeda> getTroco() {
-        int trocoValor = saldo - valorTicket; // Calcula o valor do troco
+        int trocoValor = saldo - valor; // Calcula o valor do troco
         if (trocoValor > 0) {
             Troco troco = new Troco(trocoValor); // Cria um objeto Troco com o valor do troco
             return troco.getIterator(); // Retorna o iterador das cédulas do troco

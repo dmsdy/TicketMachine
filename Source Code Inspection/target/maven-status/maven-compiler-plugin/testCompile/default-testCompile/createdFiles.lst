@@ -1,0 +1,5 @@
+br\calebe\ticketmachine\exception\PapelMoedaInvalidaExceptionTest.class
+br\calebe\ticketmachine\core\TicketMachineTest.class
+br\calebe\ticketmachine\core\PapelMoedaTest.class
+br\calebe\ticketmachine\exception\SaldoInsuficienteExceptionTest.class
+br\calebe\ticketmachine\core\TrocoTest.class

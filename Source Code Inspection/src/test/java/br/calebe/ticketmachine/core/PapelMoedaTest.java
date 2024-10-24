@@ -1,42 +1,29 @@
 package br.calebe.ticketmachine.core;
-//
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
 /**
- * Classe que representa uma cédula de dinheiro.
+ * Testes para a classe PapelMoeda.
+ * Utiliza Particionamento de Equivalência para testar valores válidos e inválidos.
  */
-public class PapelMoeda {
+public class PapelMoedaTest {
 
-    // Valor da cédula (ex: 2, 5, 10, 20, 50, 100)
-    protected int valor;
-
-    // Quantidade de cédulas desse valor
-    protected int quantidade;
-
-    /**
-     * Construtor que inicializa o valor e a quantidade de cédulas.
-     * 
-     * @param valor Valor da cédula.
-     * @param quantidade Quantidade de cédulas.
-     */
-    public PapelMoeda(int valor, int quantidade) {
-        this.valor = valor;
-        this.quantidade = quantidade;
+    @Test
+    public void testConstrutorValoresValidos() {
+        PapelMoeda papelMoeda = new PapelMoeda(10, 5);
+        assertEquals(10, papelMoeda.getValor());
+        assertEquals(5, papelMoeda.getQuantidade());
     }
 
-    /**
-     * Retorna o valor da cédula.
-     * 
-     * @return Valor da cédula.
-     */
-    public int getValor() {
-        return valor;
-    }
-
-    /**
-     * Retorna a quantidade de cédulas.
-     * 
-     * @return Quantidade de cédulas.
-     */
-    public int getQuantidade() {
-        return quantidade;
+    @Test
+    public void testConstrutorValoresInvalidos() {
+        // Particionamento de Equivalência: Valores negativos ou zero
+        assertThrows(IllegalArgumentException.class, () -> {
+            new PapelMoeda(-10, 5);
+        });
+        assertThrows(IllegalArgumentException.class, () -> {
+            new PapelMoeda(0, 5);
+        });
     }
 }
